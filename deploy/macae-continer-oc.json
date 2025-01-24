@@ -26,7 +26,7 @@
     },
     "prefix": {
       "type": "string",
-      "defaultValue": "macae",
+      "defaultValue": "clemm",
       "metadata": {
         "description": "A prefix to add to the start of all resource names. Note: A \"unique\" suffix will also be added"
       }
@@ -67,7 +67,7 @@
       },
       "defaultValue": {
         "gpt4oCapacity": 50,
-        "cosmosThroughput": 1000,
+        "cosmosThroughput": 500,
         "containerAppSize": {
           "cpu": "2.0",
           "memory": "4.0Gi",
