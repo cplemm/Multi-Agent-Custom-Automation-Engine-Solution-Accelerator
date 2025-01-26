@@ -2,7 +2,7 @@ import os
 import uvicorn
 
 from fastapi import FastAPI
-from fastapi.responses import FileResponse, HTMLResponse, RedirectResponse, PlainTextResponse
+from fastapi.responses import FileResponse, HTMLResponse, RedirectResponse, PlainTextResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
 
 # Resolve wwwroot path relative to this script
@@ -19,11 +19,10 @@ app = FastAPI()
 
 import html
 
-@app.get("/config.js", response_class=PlainTextResponse)
+@app.get("/config", response_class=JSONResponse)
 def get_config():
-    backend_url = html.escape(os.getenv("BACKEND_API_URL", "http://localhost:8000"))
-    return f'const BACKEND_API_URL = "{backend_url}";'
-
+    backend_url = os.getenv("BACKEND_API_URL", "http://localhost:8000")
+    return {"backendApiUrl": backend_url}
 
 # Redirect root to app.html
 @app.get("/")

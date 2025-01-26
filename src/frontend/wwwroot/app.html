@@ -80,7 +80,16 @@
             <footer class="modal-card-foot"></footer>
         </div>
     </div>
-    <script src="/config.js" defer></script>
+    <script>
+        fetch('/config')
+            .then(response => response.json())
+            .then(config => {
+                const backendUrl = config.backendApiUrl;
+                console.log('Backend API URL:', backendUrl);
+                // Initialize your app with the backend URL
+            })
+            .catch(err => console.error('Failed to fetch config:', err));
+    </script>
     <script src="/utils.js" defer></script>
     <script type="text/javascript" src="app.js" defer></script>
 </body>
