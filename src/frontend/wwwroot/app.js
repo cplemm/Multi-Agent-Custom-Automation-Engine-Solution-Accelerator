@@ -1,6 +1,6 @@
 (() => {
     window.headers = GetAuthDetails();
-    const apiEndpoint = BACKEND_API_URL;
+    const apiEndpoint = "https://clemm-backend.politetree-cc016301.eastus2.azurecontainerapps.io";
     const goHomeButton = document.getElementById("goHomeButton");
     const newTaskButton = document.getElementById("newTaskButton");
     const closeModalButtons = document.querySelectorAll(".modal-close-button");
