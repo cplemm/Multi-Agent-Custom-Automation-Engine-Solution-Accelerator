@@ -81,11 +81,12 @@
     }
   },
   "variables": {
-    "appVersion": "v0.1",
+    "appVersion": "latest",
+    "appVersionFrontend": "v0.1",
     "resgistryName": "clemmmultiagent",
     "dockerRegistryUrl": "[format('https://{0}.azurecr.io', variables('resgistryName'))]",
     "backendDockerImageURL": "[format('{0}.azurecr.io/macaebackend:{1}', variables('resgistryName'), variables('appVersion'))]",
-    "frontendDockerImageURL": "[format('{0}.azurecr.io/macaefrontend:{1}', variables('resgistryName'), variables('appVersion'))]",
+    "frontendDockerImageURL": "[format('{0}.azurecr.io/macaefrontend:{1}', variables('resgistryName'), variables('appVersionFrontend'))]",
     "uniqueNameFormat": "[format('{0}-{{0}}-{1}', parameters('prefix'), uniqueString(resourceGroup().id, parameters('prefix')))]",
     "aoaiApiVersion": "2024-08-01-preview"
   },
